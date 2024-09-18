@@ -10,13 +10,14 @@ Pod::Spec.new do |s|
 An universal scanner for Flutter based on MLKit.
                        DESC
   s.homepage         = 'https://github.com/juliansteenbakker/mobile_scanner'
-  s.license          = { :file => '../LICENSE' }
+  s.license          = { :type => 'MIT', :file => '../LICENSE' }
   s.author           = { 'Julian Steenbakker' => 'juliansteenbakker@outlook.com' }
   s.source           = { :path => '.' }
   s.source_files = 'Classes/**/*'
   s.dependency 'Flutter'
   s.dependency 'GoogleMLKit/BarcodeScanning', '~> 6.0.0'
-  s.platform = :ios, '12.0'
+  s.dependency       'GoogleDataTransport', '~> 10.0'
+  s.platform = :ios, '13.0'
   s.static_framework = true
   # Flutter.framework does not contain a i386 slice.
   s.pod_target_xcconfig = { 'DEFINES_MODULE' => 'YES', 'EXCLUDED_ARCHS[sdk=iphonesimulator*]' => 'i386' }
